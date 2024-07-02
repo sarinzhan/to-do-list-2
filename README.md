@@ -13,16 +13,16 @@
    docker-compose up
 
 7. **Для остановки приложения**
- ```bash
+    ```bash
    docker-compose down
-```
+   ```
 
 После запуска приложения, Swagger доступен по адресу</br>
-```bash
-http://localhost:8080/swagger-ui/index.html
-```
+   ```bash
+   http://localhost:8080/swagger-ui/index.html
+   ```
 
-По дефолту создает пользователь:</br>
+По дефолту создается пользователь:</br>
 username:admin</br>
 password:admin
 
