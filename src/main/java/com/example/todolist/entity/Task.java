@@ -1,10 +1,8 @@
 package com.example.todolist.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity(name = "task")
-@Data
 public class Task{
 
     @Id
@@ -19,5 +17,32 @@ public class Task{
     @PrePersist
     void onPrePersist(){
         isCompleted = false;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Task setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Task setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public Boolean getCompleted() {
+        return isCompleted;
+    }
+
+    public Task setCompleted(Boolean completed) {
+        isCompleted = completed;
+        return this;
     }
 }

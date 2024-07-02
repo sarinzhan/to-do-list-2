@@ -4,25 +4,18 @@
    ```bash
    git clone https://github.com/sarinzhan/to-do-list
 
-3. ****Убедитесь что у вас установлен Docker Desktop**
+3. **Убедитесь что у вас установлен Docker Desktop**
    
-4. **Откройте терминал и перейдите в папку проекта**
-   
-5. **Для запуска приложения на порту 8080 введите**
+4. **Запустить контейнер postgresql**
    ```bash
-   docker-compose up
+   docker run --name to-do-list -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=to-do-list -d postgres:10
 
-7. **Для остановки приложения**
-    ```bash
-   docker-compose down
-   ```
+
+5. **Запустите приложение, убедившись что контейнер postgresql успешно запущен**
 
 После запуска приложения, Swagger доступен по адресу</br>
    ```bash
       http://localhost:8080/swagger-ui/index.html
    ```
 
-По дефолту создается пользователь:</br>
-username:admin</br>
-password:admin
 

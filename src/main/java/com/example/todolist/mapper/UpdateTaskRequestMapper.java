@@ -2,9 +2,13 @@ package com.example.todolist.mapper;
 
 import com.example.todolist.dto.request.UpdateTaskRequestDto;
 import com.example.todolist.entity.Task;
-import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
-public interface UpdateTaskRequestMapper {
-    Task dtoToEntity(UpdateTaskRequestDto dto);
+public class UpdateTaskRequestMapper {
+    public static Task dtoToEntity(UpdateTaskRequestDto dto){
+        Task task = new Task();
+        task.setId(dto.getId());
+        task.setCompleted(dto.getCompleted());
+        task.setDescription(dto.getDescription());
+        return task;
+    }
 }

@@ -4,16 +4,19 @@ import com.example.todolist.entity.Task;
 import com.example.todolist.exception.BaseBusinessLogicException;
 import com.example.todolist.repository.TaskRepository;
 import com.example.todolist.service.TaskService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class TaskServiceImpl implements TaskService {
 
-    private final TaskRepository taskRepository;
+    private TaskRepository taskRepository;
+
+    public TaskServiceImpl(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
+
     @Override
     public List<Task> getAll() {
         List<Task> tasks = taskRepository.findAll();
@@ -50,6 +53,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void delete(Long id) {
+        getById(id);
         try{
             taskRepository.deleteById(id);
         }catch (Exception ex){

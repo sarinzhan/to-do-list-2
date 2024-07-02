@@ -33,12 +33,12 @@ class TaskServiceImplTest {
         task1 = new Task();
         task1.setId(1L);
         task1.setDescription("Task 1");
-        task1.setIsCompleted(false);
+        task1.setCompleted(false);
 
         task2 = new Task();
         task2.setId(2L);
         task2.setDescription("Task 2");
-        task2.setIsCompleted(true);
+        task2.setCompleted(true);
     }
 
     @Test
