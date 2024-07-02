@@ -16,7 +16,7 @@ git clone https://github.com/sarinzhan/to-do-list
 Путь к свагеру: http://localhost:8080/swagger-ui/index.html
 
 По дефолту создает пользователь
-username:admin 
+username:admin, 
 password:admin
    
 
