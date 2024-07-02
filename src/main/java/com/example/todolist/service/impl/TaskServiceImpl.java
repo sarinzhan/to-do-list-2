@@ -43,8 +43,8 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void update(Task task) {
-        getById(task.getId());
         try{
+            getById(task.getId());
             taskRepository.save(task);
         }catch (Exception ex){
             throw new BaseBusinessLogicException("Не удалось обновить задачу");
@@ -53,8 +53,8 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void delete(Long id) {
-        getById(id);
         try{
+            getById(id);
             taskRepository.deleteById(id);
         }catch (Exception ex){
             throw new BaseBusinessLogicException("Не удалось удалить задачу");

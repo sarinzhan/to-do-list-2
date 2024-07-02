@@ -113,6 +113,7 @@ class TaskServiceImplTest {
 
     @Test
     void testDeleteTask_ok() {
+        when(taskRepository.findById(anyLong())).thenReturn(Optional.of(task1));
         doNothing().when(taskRepository).deleteById(1L);
 
         assertDoesNotThrow(() -> taskService.delete(1L));
@@ -121,7 +122,7 @@ class TaskServiceImplTest {
 
     @Test
     void testDeleteTask_exception() {
-        doThrow(new RuntimeException()).when(taskRepository).deleteById(1L);
+        when(taskRepository.findById(anyLong())).thenReturn(Optional.empty());
 
         BaseBusinessLogicException exception = assertThrows(BaseBusinessLogicException.class, () -> taskService.delete(1L));
         assertEquals("Не удалось удалить задачу", exception.getMessage());
