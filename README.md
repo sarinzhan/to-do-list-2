@@ -18,5 +18,11 @@ git clone https://github.com/sarinzhan/to-do-list
 По дефолту создает пользователь:</br>
 username:admin</br>
 password:admin
-   
 
+
+   
+### Шаги по установке и запуску
+
+1. **Клонирование репозитория**
+   ```bash
+   git clone https://github.com/sarinzhan/to-do-list
